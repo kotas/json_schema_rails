@@ -1,6 +1,7 @@
 # Configure Rails Environment
 ENV["RAILS_ENV"] = "test"
-require File.expand_path("../dummy/config/environment.rb",  __FILE__)
+require "rails/version"
+require File.expand_path("../dummy_apps/rails#{Rails::VERSION::MAJOR}/config/environment.rb",  __FILE__)
 require "rspec/rails"
 
 Rails.backtrace_cleaner.remove_silencers!
@@ -24,6 +25,4 @@ RSpec.configure do |config|
     mocks.syntax = :expect
     mocks.verify_partial_doubles = true
   end
-
-  config.infer_spec_type_from_file_location!
 end
