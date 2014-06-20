@@ -1,0 +1,22 @@
+Description:
+  Generates a new JSON Schema file for signle action.
+
+  See http://json-schema.org/ for JSON Schema syntax.
+
+Example:
+
+  rails generate schema posts::create title body:required published:boolean:required
+
+  This will create:
+    app/schemas/posts/create.yml
+      (with title, body and published properties)
+
+  Valid types are:
+    - array
+    - boolean
+    - integer
+    - number
+    - null
+    - object
+    - string (default)
+

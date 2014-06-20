@@ -1,0 +1,30 @@
+---
+title: <%= schema_title %>
+type: object
+properties:
+  <%= file_name %>:
+    type: object
+  <%- if parameters.empty? -%>
+    required:
+      # - param1
+      # - param2
+    properties:
+      # param1:
+      #   type: string
+      # param2:
+      #   type: string
+  <%- else -%>
+    required:
+    <%- parameters.each do |param| -%>
+      <%- if param.required? -%>
+      - <%= param %>
+      <%- else -%>
+      # - <%= param %>
+      <%- end -%>
+    <%- end -%>
+    properties:
+    <%- parameters.each do |param| -%>
+      <%= param %>:
+        type: <%= param.type %>
+    <%- end -%>
+  <%- end -%>

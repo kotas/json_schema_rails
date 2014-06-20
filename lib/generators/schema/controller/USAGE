@@ -1,0 +1,13 @@
+Description:
+  Generates new JSON Schema files for controller.
+
+  See http://json-schema.org/ for JSON Schema syntax.
+
+Example:
+
+  rails generate schema posts create update
+
+  This will create:
+    app/schemas/posts/create.yml
+    app/schemas/posts/update.yml
+
