@@ -2,6 +2,17 @@
 "$schema": "http://json-schema.org/draft-04/schema#"
 title: <%= schema_title %>
 type: object
+required:
+  - <%= model_name %>
 properties:
   <%= model_name %>:
     type: object
+    additionalProperties: false
+    # required:
+    #   - param1
+    #   - param2
+    # properties:
+    #   param1:
+    #     type: string
+    #   param2:
+    #     type: string
