@@ -23,19 +23,19 @@ RSpec.describe PostsController, type: :controller do
 
   describe "PUT #update" do
     context "with good parameters" do
-      let(:params) { { "post" => { "title" => "Hello, world!", "body" => "Howdy!" } } }
+      let(:params) { { "id" => 123, "post" => { "title" => "Hello, world!", "body" => "Howdy!" } } }
 
       it "passes the validation" do
-        put :create, params
+        put :update, params
         expect(response).to be_success
       end
     end
 
     context "with bad parameters" do
-      let(:params) { { "post" => { "title" => "Hello, world!" } } }
+      let(:params) { { "id" => 123, "post" => { "title" => "Hello, world!" } } }
 
       it "fails the validation" do
-        put :create, params
+        put :update, params
         expect(response.status).to eq 400
       end
     end
