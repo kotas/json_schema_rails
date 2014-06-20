@@ -1,0 +1,12 @@
+{
+  "title": "Search Posts",
+  "type": "object",
+  "required": [
+    "query"
+  ],
+  "properties": {
+    "query": {
+      "type": "string"
+    }
+  }
+}

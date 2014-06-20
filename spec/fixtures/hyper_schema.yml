@@ -1,0 +1,40 @@
+title: Test Schema API
+type: object
+links:
+  - href: http://example.com
+    rel: self
+properties:
+  posts:
+    type: object
+    links:
+      - method: POST
+        href: "/posts"
+        rel: create
+        schema:
+          type: object
+          properties:
+            post:
+              "$ref": "#/definitions/post"
+      - method: PUT
+        href: "/posts/{id}"
+        rel: update
+        schema:
+          type: object
+          properties:
+            post:
+              "$ref": "#/definitions/post"
+
+definitions:
+  post:
+    type: object
+    additionalProperties: false
+    required:
+      - title
+      - body
+    properties:
+      title:
+        type: string
+      body:
+        type: string
+      author:
+        type: string

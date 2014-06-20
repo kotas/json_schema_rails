@@ -1,0 +1,28 @@
+{
+  "title": "Update Post",
+  "type": "object",
+  "required": [
+    "post"
+  ],
+  "properties": {
+    "post": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "title",
+        "body"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
