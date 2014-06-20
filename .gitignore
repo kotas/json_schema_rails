@@ -1,5 +1,6 @@
 .bundle/
 log/*.log
+rdoc/
 pkg/
 spec/dummy_apps/*/db/*.sqlite3
 spec/dummy_apps/*/db/*.sqlite3-journal
