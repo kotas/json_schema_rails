@@ -5,7 +5,7 @@ Description:
 
 Example:
 
-  rails generate schema posts create update
+  rails generate schema:controller posts create update
 
   This will create:
     app/schemas/posts/create.yml

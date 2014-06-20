@@ -5,7 +5,7 @@ Description:
 
 Example:
 
-  rails generate schema posts::create title body:required published:boolean:required
+  rails generate schema:action posts::create title body:required published:boolean:required
 
   This will create:
     app/schemas/posts/create.yml
