@@ -14,7 +14,7 @@ module JsonSchemaRails
 
     def validate_schema(schema_name = nil)
       validate_schema!(schema_name)
-    rescue JsonSchema::ValidationError
+    rescue JsonSchemaRails::ValidationError
       false
     end
 
