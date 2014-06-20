@@ -1,3 +1,5 @@
+---
+"$schema": "http://json-schema.org/draft-04/schema#"
 title: New Post
 type: object
 required:
