@@ -1,6 +1,7 @@
 require "json_schema_rails/version"
 require "json_schema_rails/errors"
 require "json_schema_rails/loaders"
+require "json_schema_rails/schema_validator"
 require "json_schema_rails/railtie" if defined?(Rails)
 
 module JsonSchemaRails
@@ -21,7 +22,7 @@ module JsonSchemaRails
     schema = lookup_schema!(schema_name)
     valid, errors = schema.validate(data)
     unless valid
-      raise ValidationError.from_errors(schema_name, schema, errors)
+      raise ValidationError.from_errors(errors, schema, schema_name)
     end
     true
   end

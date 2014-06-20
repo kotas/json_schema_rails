@@ -20,14 +20,15 @@ module JsonSchemaRails
     attr_reader :schema
     attr_reader :errors
 
-    def initialize(message, schema, errors = nil)
+    def initialize(message, schema = nil, errors = nil)
       super(message)
       @schema = schema
       @errors = errors
     end
 
-    def self.from_errors(schema_name, schema, errors)
-      message = "Validation error for schema #{schema_name}"
+    def self.from_errors(errors, schema = nil, schema_name = nil)
+      message = "Validation error"
+      message << " for schema #{schema_name}" if schema_name
 
       errors.each do |err|
         if err.is_a?(JsonSchema::ValidationError)

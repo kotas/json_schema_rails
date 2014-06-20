@@ -1,0 +1,15 @@
+---
+"$schema": "http://json-schema.org/draft-04/schema#"
+title: Invalid Schema
+type: object
+required:
+  - foo
+  - bar
+properties:
+  foo:
+    type: unknown
+  bar:
+    type: object
+    propertie:  # Misspelled!
+      baz:
+        type: string
