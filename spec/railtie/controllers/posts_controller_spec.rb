@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe PostsController do
+RSpec.describe PostsController, type: :controller do
   describe "POST #create" do
     context "with good parameters" do
       let(:params) { { "post" => { "title" => "Hello, world!", "body" => "Howdy!" } } }
