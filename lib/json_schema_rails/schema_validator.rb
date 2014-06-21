@@ -12,9 +12,9 @@ module JsonSchemaRails
     def use_core_schemas!(options = {})
       schemas_dir = File.expand_path('../../../schemas', __FILE__)
       if options[:loose]
-        add_meta_schema_file Dir[File.join(schemas_dir, '*.json')]
+        add_meta_schema_file Dir[File.join(schemas_dir, '*.json')].sort
       else
-        add_meta_schema_file Dir[File.join(schemas_dir, 'strict', '*.json')]
+        add_meta_schema_file Dir[File.join(schemas_dir, 'strict', '*.json')].sort
       end
     end
 
