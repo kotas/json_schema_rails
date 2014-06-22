@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount JsonSchemaRails::Engine => '/schemas'
   resources :posts, only: [:create, :update]
 
   # The priority is based upon order of creation: first created -> highest priority.
