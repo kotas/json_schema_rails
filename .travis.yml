@@ -1,12 +1,13 @@
 language: ruby
+cache: bundler
 rvm:
+  - 1.9.3-p547
   - 2.1.2
+env:
+  - RAILS_VERSION=3.2.18
+  - RAILS_VERSION=4.1.1
 
 install:
   - "travis_retry bundle install"
 
 script: "bundle exec rspec"
-
-env:
-  - RAILS_VERSION=3.2.18
-  - RAILS_VERSION=4.1.1
