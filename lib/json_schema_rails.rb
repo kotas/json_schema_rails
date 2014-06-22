@@ -2,7 +2,9 @@ require "json_schema_rails/version"
 require "json_schema_rails/errors"
 require "json_schema_rails/loaders"
 require "json_schema_rails/schema_validator"
-require "json_schema_rails/railtie" if defined?(Rails)
+require "json_schema_rails/engine" if defined?(Rails)
+require "json_schema_rails/json_schema/schema"
+require "json_schema_rails/json_schema/parser"
 
 module JsonSchemaRails
   def self.schema_loader

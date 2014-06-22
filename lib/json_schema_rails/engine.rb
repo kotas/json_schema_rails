@@ -1,7 +1,9 @@
 require "json_schema_rails/helpers"
 
 module JsonSchemaRails
-  class Railtie < ::Rails::Railtie
+  class Engine < ::Rails::Engine
+    isolate_namespace JsonSchemaRails
+
     initializer "json_schema_rails.set_schema_loader" do |app|
       if schema_file = Dir[app.root.join('app', 'schema.*')].first
         loader = JsonSchemaRails::Loaders::HyperSchema.new(schema_file)

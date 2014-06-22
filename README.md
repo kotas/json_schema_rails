@@ -97,6 +97,28 @@ class ApplicationController < ActionController::Base
 end
 ```
 
+### Serve schemas in your application
+
+If you want to use your schemas in your client JavaScript, the mountable engine `JsonSchemaRails::Engine` provides a route for serving schemas in you application.
+
+To use it, write the following in your `config/routes.rb`:
+
+```ruby
+Your::Application.routes.draw do
+  mount JsonSchemaRails::Engine => '/schemas'
+end
+```
+
+And you can get your schemas through the path `/schemas` like following:
+
+```
+# Get `app/schemas/posts/create.*` as application/json
+GET /schemas/posts/create.json
+
+# Get `app/schemas/posts/update.*` as text/yaml
+GET /schemas/posts/update.yaml
+```
+
 ### Validate schema files
 
 json_schema_rails provides a rake task `schema:check` to validate your schema files.
