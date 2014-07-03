@@ -2,6 +2,9 @@ Dummy::Application.routes.draw do
   mount JsonSchemaRails::Engine => '/schemas'
   resources :posts, only: [:create, :update]
 
+  get 'helpers/schema_path', to: 'helpers#show_schema_path'
+  get 'helpers/schema_url',  to: 'helpers#show_schema_url'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -114,9 +114,30 @@ And you can get your schemas through the path `/schemas` like following:
 ```
 # Get `app/schemas/posts/create.*` as application/json
 GET /schemas/posts/create.json
+GET /schemas/posts/create
 
 # Get `app/schemas/posts/update.*` as text/yaml
 GET /schemas/posts/update.yaml
+```
+
+To get a path to a specific schema's endpoint, call `json_schema_rails.schema_path(schema_name)` or `json_schema_rails.schema_url(schema_name)`.
+
+```ruby
+# In your controller or view
+json_schema_rails.schema_path("posts/create")  # "/schemas/posts/create"
+json_schema_rails.schema_url("posts/update")   # "http://example.com/schemas/posts/create"
+```
+
+You can change `json_schema_rails` part of above by specifying `as` parameter when mounting the route:
+
+```ruby
+Your::Application.routes.draw do
+  mount JsonSchemaRails::Engine => '/schemas', as: 'json_schema'
+end
+
+# And you can call the helpers as
+json_schema.schema_path("posts/create")
+json_schema.schema_url("posts/update")
 ```
 
 ### Validate schema files
