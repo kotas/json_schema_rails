@@ -1,6 +1,6 @@
 # json_schema_rails
 
-[![Build Status](https://travis-ci.org/kotas/json_schema_rails.svg?branch=master)](https://travis-ci.org/kotas/json_schema_rails) [![Code Climate](https://codeclimate.com/github/kotas/json_schema_rails.png)](https://codeclimate.com/github/kotas/json_schema_rails)
+[![Build Status](https://travis-ci.org/kotas/json_schema_rails.svg?branch=master)](https://travis-ci.org/kotas/json_schema_rails) [![Code Climate](https://codeclimate.com/github/kotas/json_schema_rails.png)](https://codeclimate.com/github/kotas/json_schema_rails) [![Gem Version](https://badge.fury.io/rb/json_schema_rails.svg)](http://badge.fury.io/rb/json_schema_rails)
 
 [JSON Schema v4](http://json-schema.org/) validator and generator for Rails 3+
 
