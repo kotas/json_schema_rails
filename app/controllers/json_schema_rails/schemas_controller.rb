@@ -1,7 +1,7 @@
 module JsonSchemaRails
   class SchemasController < ApplicationController
-    def get
-      schema = JsonSchemaRails.lookup_schema(params[:schema])
+    def show
+      schema = JsonSchemaRails.lookup_schema(params[:id])
       raise ActionController::RoutingError.new('No Such Schema') unless schema
 
       respond_to do |format|
