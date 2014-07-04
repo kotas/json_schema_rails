@@ -5,7 +5,7 @@ rvm:
   - 2.1.2
 env:
   - RAILS_VERSION=3.2.18
-  - RAILS_VERSION=4.1.1
+  - RAILS_VERSION=4.1.4
 
 install:
   - "travis_retry bundle install"
