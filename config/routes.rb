@@ -1,3 +1,3 @@
 JsonSchemaRails::Engine.routes.draw do
-  resources :schemas, only: :show, path: '', id: /[\/a-zA-Z0-9_-]+/, defaults: { format: 'json' }
+  get '*id(.:format)', to: 'schemas#show', as: :schema, id: /[\/a-zA-Z0-9_-]+/, defaults: { format: 'json' }
 end
