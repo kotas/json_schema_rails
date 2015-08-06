@@ -61,7 +61,7 @@ end
 You can use options for `before_filter` if you want stop validation for specific actions:
 
 ```ruby
-validate_schema excpet: :get
+validate_schema except: :get
 validate_schema only: [:create, :update]
 ```
 
